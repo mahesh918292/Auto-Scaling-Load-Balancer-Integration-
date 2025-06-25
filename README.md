@@ -4,6 +4,7 @@ This repository contains step-by-step instructions and configuration to:
 ✅ Launch an Auto Scaling Group <br>
 ✅ Automatically register EC2 instances from the ASG with the ALB <br>
 ✅ Distribute incoming traffic across healthy EC2 instances <br>
+✅ Result can be seen in the jmeter ( Load and performance Testing )
 ![1](https://github.com/user-attachments/assets/c41398e8-2cdf-49cf-92bd-897c8e63339f)
 # Goto Console Click Ec2 and select target groups
 click create target group,select target type ( In my case it is instances )
@@ -72,8 +73,10 @@ so that it will check the ec2 health after the grace period
 # Pictorial representation of how load balancer work
 ![18](https://github.com/user-attachments/assets/5122cddd-7df5-44d6-a04a-41cd7b21221a)
 # Output of dns of load balancer
-
-
-
+![19](https://github.com/user-attachments/assets/e75212b5-f5c7-4b5f-838f-c56997b04d22)
+# Testing the dns elb in the jmeter
+![20](https://github.com/user-attachments/assets/09a450e9-f4e0-478f-a191-ec3e8fd33334)
+![21](https://github.com/user-attachments/assets/c0338ccf-15c6-4ea5-9776-3dc90aaa0562)
+# Instances equally handled traffic and sent the response
 We attach the Target Group to the Auto Scaling Group, and the Target Group is already attached to the Load Balancer.
 So whenever Auto Scaling launches new EC2 instances, they are automatically registered to the Target Group, and the Load Balancer then routes traffic to them.
