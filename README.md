@@ -58,7 +58,12 @@ give a name,select the launch template
 # Attach this auto scaling to load balancer
 So that it can auto scale based on the demand and this load balancer distributes the traffic equally.
 ![14](https://github.com/user-attachments/assets/51ef0987-e622-4eb4-a853-20070b829527)
-# Specify the capacities and scaling policy
+# Specify the capacities and scaling policy  
+Didnt specify any policy, if you want can specify policy like when to scale out and scale in policy  <br>
+Example : <br> 
+Policy Name	Condition	Action <br>
+Scale Out	CPU > 70% for 2 mins	Add 1 instance <br>
+Scale In	CPU < 30% for 2 mins	Remove 1 instance <br>
 ![15](https://github.com/user-attachments/assets/e343afa9-a390-4d14-94cb-856031179207)
 # Health checks 
 so that it will check the ec2 health after the grace period
