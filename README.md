@@ -18,15 +18,15 @@ click create target group,select target type ( In my case it is instances )
 # user Data
 #!/bin/bash
 # Update system and install Node.js, Git
-yum update -y
-curl -fsSL https://rpm.nodesource.com/setup_18.x | bash -
-yum install -y nodejs git
+yum update -y <br>
+curl -fsSL https://rpm.nodesource.com/setup_18.x | bash - <br>
+yum install -y nodejs git <br> 
 
 # Switch to ec2-user's home directory
 cd /home/ec2-user
 
 # Clone your Node.js app repo (replace with your repo)
-git clone https://github.com/johnpapa/node-hello.git
+git clone https://github.com/johnpapa/node-hello.git <br>
 cd node-hello
 
 # Install PM2 globally
@@ -67,3 +67,8 @@ so that it will check the ec2 health after the grace period
 # Pictorial representation of how load balancer work
 ![18](https://github.com/user-attachments/assets/5122cddd-7df5-44d6-a04a-41cd7b21221a)
 # Output of dns of load balancer
+
+
+
+We attach the Target Group to the Auto Scaling Group, and the Target Group is already attached to the Load Balancer.
+So whenever Auto Scaling launches new EC2 instances, they are automatically registered to the Target Group, and the Load Balancer then routes traffic to them.
